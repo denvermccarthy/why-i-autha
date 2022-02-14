@@ -13,7 +13,7 @@ export async function signUpUser(email, password) {
 }
 
 export async function signInUser(email, password) {
-
+    await client.auth.signIn({ email, password });
 }
 
 export async function checkAuth() {}
