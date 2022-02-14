@@ -21,8 +21,12 @@ export async function checkAuth() {}
 
 export async function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('/other-page');
     }
 }
 
-export async function logout() {}
+export async function logOut() {
+    await client.auth.signOut();
+    
+    return location.replace('/');
+}
